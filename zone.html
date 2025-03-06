@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know Your Area</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            width: 50%;
+            text-align: left;
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Know Your Area</h1>
+        <form action="#" method="post">
+            <label for="pincode">Enter Pincode:</label>
+            <input type="text" id="pincode" name="pincode" required>
+            
+            <label for="category">Select Information Type:</label>
+            <select id="category" name="category" required>
+                <option value="municipal_office">Municipal Office</option>
+                <option value="police_station">Nearest Police Station</option>
+                <option value="hospital">Hospitals</option>
+                <option value="fire_station">Fire Station</option>
+                <option value="schools">Nearby Schools</option>
+                <option value="parks">Public Parks</option>
+            </select>
+            
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</body>
+</html>

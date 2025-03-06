@@ -1,0 +1,105 @@
+
+
+/*home page*/
+
+.body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:black ;
+}
+.header {
+    font-family: cursive;
+    background-color:rgb(246, 215, 143);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+}
+.top-banner {
+    background: #0073e6;
+    color: #fff;
+    text-align: center;
+    size: 300px;
+    padding: 5px 0;
+}
+.search-bar {
+    text-align: center;
+    font-size:20px;
+    margin: px;
+}
+.search-bar input {
+    padding: 17px;
+    width: 80%;
+    border: 1px solid #ccc;
+    font-size: 20px;
+}
+.search-bar button {
+    padding: 20px;
+    background:rgb(149, 244, 244);
+    margin-top: 25px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.content {
+    padding: 20px;
+    text-align: center;
+    background: white;
+}
+.buttons {
+    text-align:center;
+    margin: 20px 0;
+}
+.buttons button {
+    padding: 10px;
+    margin: 10px;
+    background: #f7c000;
+    border: none;
+    cursor: pointer;
+}
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3,2fr);
+    gap: 25px;
+    padding: 20px;
+    width: 1400px;
+    align-items: center;
+    background-color:rgb(255, 254, 254);   
+
+    
+}
+.grid-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+    box-shadow: 0px 0px 5px gray;
+    color: #000;
+    font-size: 25px;
+    border: 1px solid #000;
+    flex-direction: column;
+    size: 10px;
+}
+.grid-item img {
+width: 100px;
+height: 100px;
+} 
+.grid-item:hover {
+    background: lightgray;
+  cursor: pointer;
+transform: scale(1.05);
+
+
+}

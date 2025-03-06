@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-900 text-white">
+    <div class="w-full max-w-md p-8 space-y-6 bg-gray-800 rounded-2xl shadow-lg">
+        <h2 class="text-3xl font-bold text-center">Welcome to CitiVoice</h2>
+        
+        <form id="authForm" class="space-y-4">
+            <div>
+                <label for="Username/Mobile no." class="block text-sm">Username/Mobile no.</label>
+                <input type="Username/Mobile no." id="userId" class="w-full px-4 py-2 mt-1 text-black rounded-lg focus:ring-2 focus:ring-blue-500" required>
+            </div>
+            
+            <div>   
+                <label for="password" class="block text-sm">Password</label>
+                <input type="password" id="password" class="w-full px-4 py-2 mt-1 text-black rounded-lg focus:ring-2 focus:ring-blue-500" required>
+            </div>
+            
+            <button type="submit" class="w-full py-2 font-semibold text-center bg-blue-500 rounded-lg hover:bg-blue-600">Login</button>
+        </form>
+        
+        <div class="flex justify-between text-sm">
+            <button id="forgotPassword" class="text-blue-400 hover:underline">Forgot Password?</button>
+            <button id="signUp" class="text-blue-400 hover:underline">Sign Up</button>
+        </div>
+    </div>
+    
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+    const authForm = document.getElementById("authForm");
+    const errorMessage = document.getElementById("error-message");
+
+    // Login function
+    function login(userId, password) {
+        // Dummy credentials for demonstration
+        if (userId === "admin" && password === "12345") {
+            window.location.href = "home.html"; // Redirect to main page
+        } else {
+            errorMessage.innerText = "Invalid User ID or Password!";
+        }
+    }
+
+    // Handle form submission
+    authForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const userId = document.getElementById("userId")?.value;
+        const password = document.getElementById("password")?.value;
+        const resetEmail = document.getElementById("resetEmail")?.value;
+        const newEmail = document.getElementById("newEmail")?.value;
+        const newPassword = document.getElementById("newPassword")?.value;
+
+        if (userId && password) {
+            // Login form
+            login(userId, password);
+        } else if (resetEmail) {
+            // Password reset form
+            errorMessage.innerText = `Password reset email sent to ${resetEmail}`;
+            setTimeout(() => {
+                window.location.reload(); // Reload the page to show the login form again
+            }, 3000);
+        } else if (newEmail && newPassword) {
+            // Sign-up form
+            errorMessage.innerText = `Account created successfully for ${newEmail}`;
+            setTimeout(() => {
+                window.location.reload(); // Reload the page to show the login form again
+            }, 3000);
+        }
+    });
+
+    // Forgot password button
+    document.getElementById("forgotPassword").addEventListener("click", function () {
+        authForm.innerHTML = `
+            <label for='resetEmail' class='block text-sm'>Enter your email to reset password</label>
+            <input type='email' id='resetEmail' class='w-full px-4 py-2 mt-1 text-black rounded-lg focus:ring-2 focus:ring-blue-500' required>
+            <button type='submit' class='w-full py-2 font-semibold text-center bg-red-500 rounded-lg hover:bg-red-600'>Reset Password</button>
+        `;
+    });
+
+    // Sign-up button
+    document.getElementById("signUp").addEventListener("click", function () {
+        authForm.innerHTML = `
+            <label for='newEmail' class='block text-sm'>Email</label>
+            <input type='email' id='newEmail' class='w-full px-4 py-2 mt-1 text-black rounded-lg focus:ring-2 focus:ring-blue-500' required>
+            
+            <label for='newPassword' class='block text-sm'>Password</label>
+            <input type='password' id='newPassword' class='w-full px-4 py-2 mt-1 text-black rounded-lg focus:ring-2 focus:ring-blue-500' required>
+            
+            <button type='submit' class='w-full py-2 font-semibold text-center bg-green-500 rounded-lg hover:bg-green-600'>Sign Up</button>
+        `;
+    });
+});
+
+    </script>
+</body>
+</html>
